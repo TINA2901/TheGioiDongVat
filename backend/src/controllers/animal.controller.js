@@ -13,7 +13,7 @@ export const getAnimalById = async (req, res) => {
     // 2. Query Database
     // Mẹo: Bạn có thể JOIN với bảng categories để lấy luôn tên loài nếu muốn
     const query = `
-      SELECT animals.*, categories.name as category_name 
+      SELECT animals.*
       FROM animals 
       LEFT JOIN categories ON animals.category_id = categories.id
       WHERE animals.id = ?
